@@ -1,0 +1,6 @@
+[Server]
+Name=Conquer3D-7500
+IP=127.0.0.1
+Port=9960
+Version=7500
+Type=3D
