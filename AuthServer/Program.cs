@@ -1,24 +1,32 @@
 using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
-namespace Conquer3D_7500
+namespace Conquer3D_7500.AuthServer
 {
-    class AuthServer
+    class Program
     {
         static void Main()
         {
-            Console.WriteLine("=== Conquer 3D 7500 Auth Started ===");
-            Console.WriteLine("Port: 9960");
+            Console.WriteLine("=== Conquer3D Auth 7500 ===");
             TcpListener listener = new TcpListener(IPAddress.Any, 9960);
             listener.Start();
-            Console.WriteLine("Waiting for 7500 client...");
+            Console.WriteLine("Auth Started on 9960 - login: admin/admin");
 
-            while(true)
+            while (true)
             {
                 var client = listener.AcceptTcpClient();
-                Console.WriteLine($"New client: {client.Client.RemoteEndPoint}");
-                // هنا هنضيف فك تشفير 7500 بعدين
+                Console.WriteLine("Client: " + client.Client.RemoteEndPoint);
+                var stream = client.GetStream();
+                byte[] buffer = new byte[1024];
+                int read = stream.Read(buffer, 0, buffer.Length);
+                string req = Encoding.ASCII.GetString(buffer, 0, read);
+                Console.WriteLine("Login: " + req);
+
+                string res = "AUTH_OK|127.0.0.1|5816";
+                byte[] data = Encoding.ASCII.GetBytes(res);
+                stream.Write(data, 0, data.Length);
             }
         }
     }
