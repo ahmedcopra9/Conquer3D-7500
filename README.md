@@ -1,10 +1,16 @@
-# Conquer 3D - 7500 Base
-سورس كونكر 3D اصدار 7500 نظيف
-الـ Base ده بيدعم نظام XYZ للحركة 3D
+# Conquer3D-7500 - 3D Base
+سورس كونكر 3D نظيف اصدار 7500
 
-## طريقة التشغيل
-1. افتح AuthServer
-2. افتح GameServer
-3. عدل Server.dat لـ 127.0.0.1
+## المميزات
+- Auth Server بورت 9960
+- Game Server بورت 5816
+- نظام حركة XYZ 3D حقيقي
+- داتا بيز جاهزة
 
-Made by ahmedcopra9
+## التشغيل
+1. افتح MySQL وشغل Database/database.sql
+2. افتح AuthServer في Visual Studio وشغله
+3. افتح GameServer وشغله
+4. عدل ملف Server.dat في الكلاينت لـ 127.0.0.1
+
+by ahmedcopra9
