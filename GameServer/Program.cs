@@ -1,5 +1,4 @@
 using System;
-using System.Net;
 
 namespace Conquer3D_7500.GameServer
 {
@@ -8,8 +7,9 @@ namespace Conquer3D_7500.GameServer
         static void Main()
         {
             Console.WriteLine("=== Conquer 3D 7500 Game Server ===");
-            Console.WriteLine("Port: 5816 | System: XYZ 3D");
-            Console.WriteLine("Game Server Ready!");
+            Console.WriteLine("Port: 5816 | Map: Twin City (1002)");
+            Console.WriteLine("System: XYZ 3D Movement Enabled");
+            Console.WriteLine("Server Ready - Waiting for players...");
             Console.ReadLine();
         }
     }
